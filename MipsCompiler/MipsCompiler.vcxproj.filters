@@ -36,6 +36,9 @@
     <ClCompile Include="VariableDeclarations.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CrossReference.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MipsCompiler.h">
@@ -54,6 +57,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="VariableDeclarations.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CrossReference.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
