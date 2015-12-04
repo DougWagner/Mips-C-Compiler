@@ -16,6 +16,11 @@ void uselessfunction()
 		{
 			d = c * c;
 			e = d * c;
+			for (int i = 0; i < 100; i++) 
+			{
+				std::cout << "lol";
+				std::cout << std::endl;
+			}
 		}
 		f = e - d;
 		g = f * f;
