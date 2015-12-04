@@ -9,6 +9,7 @@
 #include <unordered_set>
 
 #include "FileStructure.h"
+#include "Tokenizer.h"
 #include "ArithmeticFactory.h"
 //#include "Lineparser.h"
 //#include "Lexer.h"
@@ -20,9 +21,11 @@ class MipsCompiler
 private:
 	std::vector<std::string> file;
 	FileStructure structure;
+	Tokenizer tokens;
 protected:
 	void initializeFile(std::string);
 	void analyzeStructure();
+	void tokenize();
 public:
 	MipsCompiler(std::string);
 	void printFile();

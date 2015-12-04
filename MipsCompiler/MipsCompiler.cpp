@@ -12,6 +12,7 @@ MipsCompiler::MipsCompiler(std::string filename)
 {
 	initializeFile(filename);
 	analyzeStructure();
+	tokenize();
 }
 
 void MipsCompiler::initializeFile(std::string filename)
@@ -34,6 +35,11 @@ void MipsCompiler::initializeFile(std::string filename)
 void MipsCompiler::analyzeStructure()
 {
 	structure = FileStructure(file);
+}
+
+void MipsCompiler::tokenize()
+{
+	tokens = Tokenizer(file, structure);
 }
 
 void MipsCompiler::printFile()

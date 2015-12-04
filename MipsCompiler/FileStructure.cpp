@@ -7,7 +7,7 @@ FileStructure::FileStructure(std::vector<std::string> fileVect)
 	size_t x = 0;
 	fillBlockTree(&i, &x, root, fileVect);
 	//printStructure(root, fileVect);
-	printBlock(findBlockContainingLine(17), fileVect);
+	//printBlock(findBlockContainingLine(17), fileVect);
 }
 
 Block* FileStructure::createBlock(int x, int y, size_t xPos, size_t yPos, Block* p)
