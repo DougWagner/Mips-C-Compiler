@@ -4,7 +4,9 @@ FileStructure::FileStructure(std::vector<std::string> fileVect)
 {
 	root = createBlock(0, fileVect.size() - 1, 0, fileVect[fileVect.size() - 1].length(), 0); // parent is 0 because root
 	unsigned int i = 0;
-	fillBlockTree(&i, 0, root, fileVect);
+	size_t x = 0;
+	fillBlockTree(&i, &x, root, fileVect);
+	printStructure(root, fileVect);
 }
 
 Block* FileStructure::createBlock(int x, int y, size_t xPos, size_t yPos, Block* p)
@@ -27,8 +29,9 @@ Block* FileStructure::createBlock(int x, size_t xPos, Block* p)
 	return b;
 }
 
-void FileStructure::fillBlockTree(unsigned int* idx, size_t lidx, Block* block, std::vector<std::string> vec)
+void FileStructure::fillBlockTree(unsigned int* idx, size_t* lidx, Block* block, std::vector<std::string> vec)
 {
+	/*
 	for (*idx; *idx < vec.size(); *idx += 1)
 	{
 		auto x = vec[*idx].find("{", lidx);
@@ -48,4 +51,44 @@ void FileStructure::fillBlockTree(unsigned int* idx, size_t lidx, Block* block, 
 		}
 		lidx = 0;
 	}
+	*/
+	for (*idx; *idx < vec.size(); *idx += 1)
+	{
+		*lidx = vec[*idx].find("{", *lidx);
+		if (*lidx != std::string::npos)
+		{
+			Block* newBlock = createBlock(*idx, *lidx, block);
+			block->children.push_back(newBlock);
+			*lidx += 1;
+			fillBlockTree(idx, lidx, newBlock, vec);
+			*lidx += 1;
+			//lidx++;
+		}
+		if(*lidx == std::string::npos)
+		{
+			*lidx = 0;
+		}
+		*lidx = vec[*idx].find("}", *lidx);
+		if (*lidx != std::string::npos)
+		{
+			block->bottom = *idx;
+			block->bottomPos = *lidx;
+			break;
+		}
+		*lidx = 0;
+	}
+}
+
+void FileStructure::printStructure(Block* block, std::vector<std::string> vec)
+{
+	for (int i = 0; i < block->children.size(); i++)
+	{
+		printStructure(block->children[i], vec);
+	}
+	std::cout << "Start Block" << std::endl;
+	for (int i = block->top; i <= block->bottom; i++)
+	{
+		std::cout << vec[i] << std::endl;
+	}
+	std::cout << std::endl;
 }

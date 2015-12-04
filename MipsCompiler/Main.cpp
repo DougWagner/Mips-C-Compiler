@@ -1,7 +1,7 @@
 #include "MipsCompiler.h" 
 int main()
 {
- 	std::string infile = "FileStructure.cpp";
+ 	std::string infile = "testfile.cpp";
  	MipsCompiler run = MipsCompiler(infile);
 	run.printFile();
  	system("pause");
