@@ -8,15 +8,21 @@
 #include <unordered_map>
 #include <unordered_set>
 
-#include "Lineparser.h"
-#include "Lexer.h"
-#include "ArithmeticFactory.h"
-#include "Arithmetic.h"
+#include "FileStructure.h"
+//#include "Lineparser.h"
+//#include "Lexer.h"
+//#include "ArithmeticFactory.h"
+//#include "Arithmetic.h"
 
 class MipsCompiler
 {
 private:
-
+	std::vector<std::string> file;
+	FileStructure asdf;
+protected:
+	void initializeFile(std::string);
+	void analyzeStructure();
 public:
-	MipsCompiler(std::ifstream&);
+	MipsCompiler(std::string);
+	void printFile();
 };

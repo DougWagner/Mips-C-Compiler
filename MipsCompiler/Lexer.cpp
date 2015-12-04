@@ -1,5 +1,5 @@
 #include "MipsCompiler.h"
-
+/*
 Lexer::Lexer(std::string line)
 {
 	initializeReservedKeys();
@@ -46,3 +46,4 @@ void Lexer::initializeReservedKeys()
 	cReservedKeywords.insert("signed");
 	cReservedKeywords.insert("volatile");
 }
+*/

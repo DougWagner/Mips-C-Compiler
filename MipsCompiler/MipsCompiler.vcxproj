@@ -121,6 +121,7 @@
     <ClCompile Include="Arithmetic.cpp" />
     <ClCompile Include="ArithmeticFactory.cpp" />
     <ClCompile Include="CrossReference.cpp" />
+    <ClCompile Include="FileStructure.cpp" />
     <ClCompile Include="Lexer.cpp" />
     <ClCompile Include="LineParser.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -131,6 +132,7 @@
     <ClInclude Include="Arithmetic.h" />
     <ClInclude Include="ArithmeticFactory.h" />
     <ClInclude Include="CrossReference.h" />
+    <ClInclude Include="FileStructure.h" />
     <ClInclude Include="Lexer.h" />
     <ClInclude Include="LineParser.h" />
     <ClInclude Include="MipsCompiler.h" />

@@ -39,6 +39,9 @@
     <ClCompile Include="CrossReference.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FileStructure.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MipsCompiler.h">
@@ -60,6 +63,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CrossReference.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FileStructure.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,8 +1,9 @@
 #include "MipsCompiler.h" 
 int main()
 {
- 	std::ifstream infile("Main.cpp");
+ 	std::string infile = "FileStructure.cpp";
  	MipsCompiler run = MipsCompiler(infile);
+	run.printFile();
  	system("pause");
  	return 0;
 }

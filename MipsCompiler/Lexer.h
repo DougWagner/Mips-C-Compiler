@@ -1,4 +1,5 @@
 #pragma once
+/*
 #include "MipsCompiler.h"
 class Lexer
 {
@@ -18,3 +19,4 @@ public:
 	std::vector<std::string> getKeywords();
 	std::vector<std::string> operators();
 };
+*/

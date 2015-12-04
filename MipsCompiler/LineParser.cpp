@@ -1,5 +1,5 @@
 #include "MipsCompiler.h"
-
+/*
 LineParser::LineParser(std::ifstream& infile)
 {
 	file = &infile;
@@ -14,4 +14,4 @@ void LineParser::readFile()
 	}
 }
 
-
+*/
