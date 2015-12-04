@@ -9,6 +9,7 @@
 #include <unordered_set>
 
 #include "FileStructure.h"
+#include "ArithmeticFactory.h"
 //#include "Lineparser.h"
 //#include "Lexer.h"
 //#include "ArithmeticFactory.h"

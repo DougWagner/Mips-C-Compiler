@@ -16,5 +16,4 @@ IntDeclaration::IntDeclaration(std::string vName, std::string vType,
 void IntDeclaration::convertToMips()
 {
 	std::string converted = ("%s \t\t .word %s", varName, varValue);
-
 }
