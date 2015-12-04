@@ -127,6 +127,7 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MipsCompiler.cpp" />
     <ClCompile Include="testfile.cpp" />
+    <ClCompile Include="Tokenizer.cpp" />
     <ClCompile Include="VariableDeclarations.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -137,6 +138,7 @@
     <ClInclude Include="Lexer.h" />
     <ClInclude Include="LineParser.h" />
     <ClInclude Include="MipsCompiler.h" />
+    <ClInclude Include="Tokenizer.h" />
     <ClInclude Include="VariableDeclarations.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

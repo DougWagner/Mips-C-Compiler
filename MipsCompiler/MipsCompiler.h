@@ -19,7 +19,7 @@ class MipsCompiler
 {
 private:
 	std::vector<std::string> file;
-	FileStructure asdf;
+	FileStructure structure;
 protected:
 	void initializeFile(std::string);
 	void analyzeStructure();

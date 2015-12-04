@@ -23,8 +23,11 @@ protected:
 	Block* createBlock(int, int, size_t, size_t, Block*);
 	Block* createBlock(int, size_t, Block*);
 	void fillBlockTree(unsigned int*, size_t*, Block*, std::vector<std::string>);
+	Block* findBlockContainingLine(int, Block*);
 public:
 	FileStructure() {}
 	FileStructure(std::vector<std::string>);
+	Block* findBlockContainingLine(int);
 	void printStructure(Block*, std::vector<std::string>);
+	void printBlock(Block*, std::vector<std::string>);
 };

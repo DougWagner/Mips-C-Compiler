@@ -6,7 +6,8 @@ FileStructure::FileStructure(std::vector<std::string> fileVect)
 	unsigned int i = 0;
 	size_t x = 0;
 	fillBlockTree(&i, &x, root, fileVect);
-	printStructure(root, fileVect);
+	//printStructure(root, fileVect);
+	printBlock(findBlockContainingLine(17), fileVect);
 }
 
 Block* FileStructure::createBlock(int x, int y, size_t xPos, size_t yPos, Block* p)
@@ -79,6 +80,31 @@ void FileStructure::fillBlockTree(unsigned int* idx, size_t* lidx, Block* block,
 	}
 }
 
+Block* FileStructure::findBlockContainingLine(int lnum)
+{
+	Block* current = root;
+	for (int i = 0; i < current->children.size(); i++)
+	{
+		if (lnum >= current->children[i]->top && lnum < current->children[i]->bottom)
+		{
+			return findBlockContainingLine(lnum, current->children[i]);
+		}
+	}
+	return current;
+}
+
+Block* FileStructure::findBlockContainingLine(int lnum, Block* current)
+{
+	for (int i = 0; i < current->children.size(); i++)
+	{
+		if (lnum >= current->children[i]->top && lnum < current->children[i]->bottom)
+		{
+			return findBlockContainingLine(lnum, current->children[i]);
+		}
+	}
+	return current;
+}
+
 void FileStructure::printStructure(Block* block, std::vector<std::string> vec)
 {
 	for (int i = 0; i < block->children.size(); i++)
@@ -91,4 +117,12 @@ void FileStructure::printStructure(Block* block, std::vector<std::string> vec)
 		std::cout << vec[i] << std::endl;
 	}
 	std::cout << std::endl;
+}
+
+void FileStructure::printBlock(Block* block, std::vector<std::string> vec)
+{
+	for (int i = block->top; i <= block->bottom; i++)
+	{
+		std::cout << vec[i] << std::endl;
+	}
 }

@@ -33,7 +33,7 @@ void MipsCompiler::initializeFile(std::string filename)
 
 void MipsCompiler::analyzeStructure()
 {
-	asdf = FileStructure(file);
+	structure = FileStructure(file);
 }
 
 void MipsCompiler::printFile()
