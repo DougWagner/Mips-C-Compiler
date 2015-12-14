@@ -1,4 +1,5 @@
 #include "Arithmetic.h"
+/*
 Arithmetic::Arithmetic(std::string n1,
 	std::string n2, std::string n3)
 {
@@ -70,4 +71,4 @@ std::string Division::arithemticOp()
 	std::string converted = s1 + s2 + s3 + s4;
 	return converted;
 }
-
+*/

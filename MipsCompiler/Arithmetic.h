@@ -8,6 +8,7 @@
 #include <map>
 #include <unordered_set>
 #include "Tokenizer.h"
+/*
 class Arithmetic
 {
 
@@ -22,7 +23,7 @@ class Addition : private virtual Arithmetic
 {
 public:
 	Addition(std::string, std::string, std::string);
-	std::string arithemticOp() override;
+	std::string arithemticOp();
 };
 							   
 class Subtraction : private Arithmetic
@@ -45,3 +46,4 @@ public:
 	Division(std::string, std::string, std::string);
 	std::string arithemticOp();
 };
+*/
