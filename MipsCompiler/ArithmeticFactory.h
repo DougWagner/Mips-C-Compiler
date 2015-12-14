@@ -10,8 +10,9 @@
 #include "Arithmetic.h"
 class ArithmeticFactory{
 protected: 
-
+	Arithmetic* arith;
 public:
 	ArithmeticFactory() {}
 	ArithmeticFactory(Line*);
+	Arithmetic* getArith() { return arith; }
 };

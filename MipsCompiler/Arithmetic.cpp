@@ -1,16 +1,14 @@
 #include "Arithmetic.h"
-Arithmetic::Arithmetic(std::string n1, int v1,
-	std::string n2, int v2, std::string n3)
+Arithmetic::Arithmetic(std::string n1,
+	std::string n2, std::string n3)
 {
 	name1 = n1;
 	name2 = n2;
 	name3 = n3;
-	iVar1 = v1;
-	iVar2 = v2;
 }
-Addition::Addition(std::string n1, int v1,
-	std::string n2, int v2, std::string n3) :
-	Arithmetic(n1, v1, n2, v2, n3)
+Addition::Addition(std::string n1,
+	std::string n2, std::string n3) :
+	Arithmetic(n1, n2, n3)
 {
 
 }
@@ -24,9 +22,9 @@ std::string Addition::arithemticOp()
 	std::string converted = s1 + s2 + s3 + s4;
 	return converted;
 }
-Subtraction::Subtraction(std::string n1, int v1,
-	std::string n2, int v2, std::string n3) :
-	Arithmetic(n1, v1, n2, v2, n3)
+Subtraction::Subtraction(std::string n1, 
+	std::string n2, std::string n3) :
+	Arithmetic(n1, n2, n3)
 {
 
 }
@@ -40,9 +38,9 @@ std::string Subtraction::arithemticOp()
 	std::string converted = s1 + s2 + s3 + s4;
 	return converted;
 }
-Multiplication::Multiplication(std::string n1, int v1,
-	std::string n2, int v2, std::string n3) :
-	Arithmetic(n1, v1, n2, v2, n3)
+Multiplication::Multiplication(std::string n1,
+	std::string n2, std::string n3) :
+	Arithmetic(n1, n2, n3)
 {
 
 }
@@ -56,9 +54,9 @@ std::string Multiplication::arithemticOp()
 	std::string converted = s1 + s2 + s3 + s4;
 	return converted;
 }
-Division::Division(std::string n1, int v1,
-	std::string n2, int v2, std::string n3) :
-	Arithmetic(n1, v1, n2, v2, n3)
+Division::Division(std::string n1,
+	std::string n2, std::string n3) :
+	Arithmetic(n1, n2, n3)
 {
 
 }

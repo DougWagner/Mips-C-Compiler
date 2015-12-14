@@ -8,6 +8,8 @@ IntDeclaration::IntDeclaration(std::string vName)
 std::string IntDeclaration::convertToMips()
 {
 	std::string tabs = "\t\t\t";
-	std::string converted = ("%s%s \t\t .word %s",tabs, varName, varValue);
-	return converted;
+	std::ostringstream ss;
+	ss << tabs << varName << "\t\t.word " << varValue;
+	//std::string converted = ("%s%s \t\t .word %s",tabs, varName, varValue);
+	return ss.str();
 }

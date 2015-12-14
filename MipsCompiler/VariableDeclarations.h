@@ -6,6 +6,7 @@
 #include <algorithm>
 #include <cstdlib>
 #include <map>
+#include <sstream>
 #include <unordered_set>
 #include "Tokenizer.h"
 //#include "MipsCompiler.h"
