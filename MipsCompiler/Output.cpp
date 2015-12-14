@@ -3,13 +3,38 @@
 Output::Output()
 {
 	output.push_back("\t\t.data\n");
-	dataloc = 0;
+	dataloc = output.begin();
+	codeloc = output.begin();
+	//dataloc = 0;
 	output.push_back("\t\t.text\n");
-	textloc = 1;
+	dataloc++;
+	codeloc++;
+	//textloc = 1;
 	output.push_back("\t\t.globl main\n");
-	globlloc = 2;
+	codeloc++;
+	//globlloc = 2;
 	output.push_back("main:\n");
-	mainloc = 3;
-	output.push_back("\t\t\tjr $ra\n");
-	exitloc = 4;
+	codeloc++;
+	//mainloc = 3;
+	output.push_back("\t\tjr $ra\n");
+	codeloc++;
+	//exitloc = 4;
+}
+
+void Output::insertData(std::string data)
+{
+	output.insert(dataloc, data);
+}
+
+void Output::insertCode(std::string data)
+{
+	output.insert(codeloc, data);
+}
+
+void Output::print()
+{
+	for (auto x : output)
+	{
+		std::cout << x;
+	}
 }

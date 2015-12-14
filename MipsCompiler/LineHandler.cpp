@@ -2,6 +2,7 @@
 
 LineHandler::LineHandler(Tokenizer tokens)
 {
+	out = Output();
 	for (int i = 0; i < tokens.getSize(); i++)
 	{
 		Line* current = tokens.getLineData(i);
@@ -9,6 +10,7 @@ LineHandler::LineHandler(Tokenizer tokens)
 		{
 			sendToFactory(current, x);
 		}
+		out.print();
 	}
 }
 
@@ -18,8 +20,9 @@ void LineHandler::sendToFactory(Line* line, LineType type)
 	{
 		declFact = DeclarationFactory(line);
 		auto x = declFact.getIntDec();
-		
+		out.insertData(x->convertToMips());
 	}
+	/*
 	else if (type == arith)
 	{
 		arithFact = ArithmeticFactory(line);
