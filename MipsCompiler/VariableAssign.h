@@ -7,7 +7,9 @@
 #include <cstdlib>
 #include <map>
 #include <unordered_set>
+#include <sstream>
 #include "Tokenizer.h"
+
 
 
 class VariableAssign
