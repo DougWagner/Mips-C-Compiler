@@ -120,6 +120,7 @@
   <ItemGroup>
     <ClCompile Include="Arithmetic.cpp" />
     <ClCompile Include="ArithmeticFactory.cpp" />
+    <ClCompile Include="AssignmentFactory.cpp" />
     <ClCompile Include="DeclarationFactory.cpp" />
     <ClCompile Include="FileStructure.cpp" />
     <ClCompile Include="LineHandler.cpp" />
@@ -133,6 +134,7 @@
   <ItemGroup>
     <ClInclude Include="Arithmetic.h" />
     <ClInclude Include="ArithmeticFactory.h" />
+    <ClInclude Include="AssignmentFactory.h" />
     <ClInclude Include="DeclarationFactory.h" />
     <ClInclude Include="FileStructure.h" />
     <ClInclude Include="LineHandler.h" />

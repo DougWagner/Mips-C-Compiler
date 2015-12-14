@@ -7,5 +7,8 @@ IntAssign::IntAssign(std::string vName, std::string vValue)
 }
 std::string IntAssign::convertToMips()
 {
-	return "hello";
+	std::string tabs = "\t\t\t";
+	std::string converted = ("%sli $t1, %s\n%sw $t1, %s", tabs, varValue,
+		 tabs, varName);
+	return converted;
 }

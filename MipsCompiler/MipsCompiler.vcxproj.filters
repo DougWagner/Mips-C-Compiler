@@ -48,6 +48,9 @@
     <ClCompile Include="VariableAssign.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="AssignmentFactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MipsCompiler.h">
@@ -78,6 +81,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="VariableAssign.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AssignmentFactory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
