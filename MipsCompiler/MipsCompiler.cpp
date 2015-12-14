@@ -1,12 +1,4 @@
 #include "MipsCompiler.h"
-/* old stuff
-// Ensure in main() that the file is valid before passing to MipsCompiler constructor
-MipsCompiler::MipsCompiler(std::ifstream& file)
-{
-	LineParser parser = LineParser(file);
-	parser.readFile();
-}
-*/
 
 MipsCompiler::MipsCompiler(std::string filename, std::string outputFile)
 {
@@ -47,6 +39,7 @@ void MipsCompiler::tokenize()
 
 void MipsCompiler::printFile()
 {
+	std::cout << "C CODE:" << std::endl << std::endl;
 	for (unsigned int i = 0; i < file.size(); i++)
 	{
 		std::cout << file[i] << std::endl;
@@ -61,5 +54,8 @@ void MipsCompiler::handleLines()
 
 void MipsCompiler::printOutput()
 {
+	std::cout << "GENERATED MIPS CODE:" << std::endl << std::endl;
+	out.print();
 	out.printToFile(outfile);
+	std::cout << std::endl << std::endl;
 }
