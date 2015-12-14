@@ -17,6 +17,8 @@ void LineHandler::sendToFactory(Line* line, LineType type)
 	if (type == decl)
 	{
 		declFact = DeclarationFactory(line);
+		auto x = declFact.getIntDec();
+		
 	}
 	else if (type == arith)
 	{

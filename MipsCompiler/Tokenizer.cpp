@@ -281,9 +281,10 @@ std::vector<LineType> Tokenizer::findType(Line* line)
 		{
 			if (x.first == "+" || x.first == "-" || x.first == "*" || x.first == "/")
 			{
+				types.erase(std::remove(types.begin(), types.end(), assign), types.end()); // quick hack
 				types.push_back(arith);
 			}
-			if (x.first == "=")
+			if (x.first == "=" && std::find(types.begin(), types.end(), arith) == types.end()) // other quick hack
 			{
 				types.push_back(assign);
 			}

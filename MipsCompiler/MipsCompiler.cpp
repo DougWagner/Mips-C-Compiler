@@ -13,7 +13,7 @@ MipsCompiler::MipsCompiler(std::string filename)
 	initializeFile(filename);
 	analyzeStructure();
 	tokenize();
-
+	handleLines();
 }
 
 void MipsCompiler::initializeFile(std::string filename)
@@ -49,4 +49,9 @@ void MipsCompiler::printFile()
 	{
 		std::cout << file[i] << std::endl;
 	}
+}
+
+void MipsCompiler::handleLines()
+{
+	handler = LineHandler(tokens);
 }

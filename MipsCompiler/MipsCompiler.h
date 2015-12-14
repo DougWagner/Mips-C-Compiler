@@ -26,6 +26,7 @@ protected:
 	void initializeFile(std::string);
 	void analyzeStructure();
 	void tokenize();
+	void handleLines();
 public:
 	MipsCompiler(std::string);
 	void printFile();
