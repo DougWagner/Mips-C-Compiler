@@ -2,6 +2,7 @@
 
 Tokenizer::Tokenizer(std::vector<std::string> fileVec, FileStructure fstruc)
 {
+	buildKeywords();
 	for (int i = 0; i < fileVec.size(); i++)
 	{
 		lines.push_back(tokenizeLine(i, fileVec[i], fstruc));
@@ -27,41 +28,53 @@ Line* Tokenizer::tokenizeLine(int linenum, std::string linetext, FileStructure f
  *	vector index 2 = lops
  *	vector index 3 = llits
  */
-std::vector<std::map<size_t, std::string>> Tokenizer::findTokens(std::string line)
+std::vector<std::map<std::string, size_t>> Tokenizer::findTokens(std::string line)
 {
-	std::vector<std::map<size_t, std::string>> vec;
-	std::map<size_t, std::string> lkeys;
-	std::map<size_t, std::string> lvars;
-	std::map<size_t, std::string> lops;
-	std::map<size_t, std::string> llits;
+	std::vector<std::map<std::string, size_t>> vec;
+	std::map<std::string, size_t> lkeys;
+	std::map<std::string, size_t> lvars;
+	std::map<std::string, size_t> lops;
+	std::map<std::string, size_t> llits;
 	std::string words = seperateWords(line);
-	std::vector<std::string> keys = getKeys(words);
-	std::vector<std::string> vars = getVars(words);
-	std::vector<std::string> ops = getOps(line);
-	std::vector<std::string> lits = getLits(words);
+	auto keys = getKeys(words);
+	auto vars = getVars(words);
+	auto ops = getOps(line);	// getOps needs non-seperated line
+	auto lits = getLits(words);
 	size_t pos = 0;
-	for (int i = 0; i < keys.size(); i++)
+	//for (int i = 0; i < keys.size(); i++)
+	for (auto x : keys)
 	{
-		pos = line.find(keys[i], pos);
-		lkeys.insert(std::pair<size_t, std::string>(pos++, keys[i]));
+		//pos = line.find(keys[i], pos);
+		pos = line.find(x, pos);
+		//lkeys.insert(std::pair<size_t, std::string>(pos++, keys[i]));
+		lkeys.insert(std::make_pair(x, pos++));
 	}
 	pos = 0;
-	for (int i = 0; i < vars.size(); i++)
+	//for (int i = 0; i < vars.size(); i++)
+	for (auto x : vars)
 	{
-		pos = line.find(vars[i], pos);
-		lvars.insert(std::pair<size_t, std::string>(pos++, vars[i]));
+		//pos = line.find(vars[i], pos);
+		pos = line.find(x, pos);
+		//lvars.insert(std::pair<size_t, std::string>(pos++, vars[i]));
+		lvars.insert(std::make_pair(x, pos++));
 	}
 	pos = 0;
-	for (int i = 0; i < ops.size(); i++)
+	//for (int i = 0; i < ops.size(); i++)
+	for (auto x : ops)
 	{
-		pos = line.find(ops[i], pos);
-		lops.insert(std::pair<size_t, std::string>(pos++, ops[i]));
+		//pos = line.find(ops[i], pos);
+		pos = line.find(x, pos);
+		//lops.insert(std::pair<size_t, std::string>(pos++, ops[i]));
+		lops.insert(std::make_pair(x, pos++));
 	}
 	pos = 0;
-	for (int i = 0; i < lits.size(); i++)
+	//for (int i = 0; i < lits.size(); i++)
+	for (auto x : lits)
 	{
-		pos = line.find(lits[i], pos);
-		llits.insert(std::pair<size_t, std::string>(pos++, lits[i]));
+		//pos = line.find(lits[i], pos);
+		pos = line.find(x, pos);
+		//llits.insert(std::pair<size_t, std::string>(pos++, lits[i]));
+		llits.insert(std::make_pair(x, pos++));
 	}
 	vec.push_back(lkeys);
 	vec.push_back(lvars);
@@ -88,4 +101,204 @@ std::string Tokenizer::seperateWords(std::string line)
 		}
 	}
 	return newline;
+}
+
+std::vector<std::string> Tokenizer::getKeys(std::string line)
+{
+	auto words = getWords(line);
+	std::vector<std::string> keys;
+	for (auto x : words)
+	{
+		if (keywords.count(x) != 0)
+		{
+			keys.push_back(x);
+		}
+	}
+	return keys;
+}
+
+std::vector<std::string> Tokenizer::getVars(std::string line)
+{
+	auto words = getWords(line);
+	std::vector<std::string> vars;
+	for (auto x : words)
+	{
+		if (keywords.count(x) == 0)
+		{
+			if (!isdigit(x[0]))
+			{
+				vars.push_back(x);
+			}
+		}
+	}
+	return vars;
+}
+
+std::vector<std::string> Tokenizer::getOps(std::string line)
+{
+	std::vector<std::string> ops;
+	size_t x = 0;
+	if (x = line.find("+") != std::string::npos)
+	{
+		ops.push_back("+");
+		while (x != std::string::npos)
+		{
+			x = line.find("+", ++x);
+			if (x != std::string::npos)
+			{
+				ops.push_back("+");
+			}
+		}
+	}
+	if (x = line.find("-") != std::string::npos)
+	{
+		ops.push_back("-");
+		while (x != std::string::npos)
+		{
+			x = line.find("-", ++x);
+			if (x != std::string::npos)
+			{
+				ops.push_back("-");
+			}
+		}
+	}
+	if (x = line.find("*") != std::string::npos)
+	{
+		ops.push_back("*");
+		while (x != std::string::npos)
+		{
+			x = line.find("*", ++x);
+			if (x != std::string::npos)
+			{
+				ops.push_back("*");
+			}
+		}
+	}
+	if (x = line.find("/") != std::string::npos)
+	{
+		ops.push_back("/");
+		while (x != std::string::npos)
+		{
+			x = line.find("/", ++x);
+			if (x != std::string::npos)
+			{
+				ops.push_back("/");
+			}
+		}
+	}
+	if (x = line.find("=") != std::string::npos)
+	{
+		ops.push_back("=");
+		while (x != std::string::npos)
+		{
+			x = line.find("=", ++x);
+			if (x != std::string::npos)
+			{
+				ops.push_back("=");
+			}
+		}
+	}
+	return ops;
+}
+
+std::vector<std::string> Tokenizer::getLits(std::string line)
+{
+	auto words = getWords(line);
+	std::vector<std::string> lits;
+	bool isnum;
+	for (auto x : words)
+	{
+		isnum = true;
+		for (int i = 0; i < x.size(); i++)
+		{
+			if (!isdigit(x[i]))
+			{
+				isnum = false;
+			}
+		}
+		if (isnum)
+		{
+			lits.push_back(x);
+		}
+	}
+	return lits;
+}
+
+std::vector<std::string> Tokenizer::getWords(std::string line)
+{
+	std::vector<std::string> result;
+	std::string word;
+	for (std::string::iterator it = line.begin(); it != line.end(); it++)
+	{
+		if (*it != ' ')
+		{
+			word += *it;
+		}
+		else
+		{
+			if (word.length() > 0)
+			{
+				/*
+				if (word[0] >= '0' && word[0] <= '9')
+				{
+					word.clear();
+				}
+				else
+				{
+					result.push_back(word);
+					word.clear();
+				}
+				*/
+				result.push_back(word);
+				word.clear();
+			}
+		}
+	}
+	return result;
+}
+
+std::vector<LineType> Tokenizer::findType(Line* line)
+{
+	std::vector<LineType> types;
+	if (!line->lkeys.empty())
+	{
+		for (auto x : line->lkeys)
+		{
+			if (x.first == "int")
+			{
+				types.push_back(decl);
+			}
+			if (x.first == "if" || x.first == "else")
+			{
+				types.push_back(cond);
+			}
+		}
+	}
+	if (!line->lops.empty())
+	{
+		for (auto x : line->lops)
+		{
+			if (x.first == "+" || x.first == "-" || x.first == "*" || x.first == "/")
+			{
+				types.push_back(arith);
+			}
+			if (x.first == "=")
+			{
+				types.push_back(assign);
+			}
+		}
+	}
+	return types;
+}
+
+void Tokenizer::buildKeywords()
+{
+	keywords.insert("int");
+	keywords.insert("if");
+	keywords.insert("else");
+}
+
+Line* Tokenizer::getLineData(int index)
+{
+	return lines[index];
 }

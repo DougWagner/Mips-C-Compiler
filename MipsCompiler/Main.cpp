@@ -1,7 +1,7 @@
 #include "MipsCompiler.h" 
 int main()
 {
- 	std::string infile = "testfile.cpp";
+ 	std::string infile = "test1.txt";
  	MipsCompiler run = MipsCompiler(infile);
 	run.printFile();
  	system("pause");

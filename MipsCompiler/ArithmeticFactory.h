@@ -8,7 +8,7 @@
 #include <unordered_map>
 #include <unordered_set>
 #include "Arithmetic.h"
-class ArithmeticFactory
+//class ArithmeticFactory
 
 
-};
+//};
