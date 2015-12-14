@@ -2,6 +2,7 @@
 
 Tokenizer::Tokenizer(std::vector<std::string> fileVec, FileStructure fstruc)
 {
+	size = fileVec.size();
 	buildKeywords();
 	for (int i = 0; i < fileVec.size(); i++)
 	{
@@ -301,4 +302,9 @@ void Tokenizer::buildKeywords()
 Line* Tokenizer::getLineData(int index)
 {
 	return lines[index];
+}
+
+int Tokenizer::getSize()
+{
+	return size;
 }

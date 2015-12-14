@@ -123,6 +123,7 @@
     <ClCompile Include="CrossReference.cpp" />
     <ClCompile Include="DeclarationFactory.cpp" />
     <ClCompile Include="FileStructure.cpp" />
+    <ClCompile Include="LineHandler.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MipsCompiler.cpp" />
     <ClCompile Include="testfile.cpp" />
@@ -135,6 +136,7 @@
     <ClInclude Include="CrossReference.h" />
     <ClInclude Include="DeclarationFactory.h" />
     <ClInclude Include="FileStructure.h" />
+    <ClInclude Include="LineHandler.h" />
     <ClInclude Include="MipsCompiler.h" />
     <ClInclude Include="Tokenizer.h" />
     <ClInclude Include="VariableDeclarations.h" />

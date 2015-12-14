@@ -33,6 +33,7 @@ struct Line
 class Tokenizer
 {
 private:
+	int size;
 	std::vector<Line*> lines;
 	std::unordered_set<std::string> keywords;
 protected:
@@ -50,4 +51,5 @@ public:
 	Tokenizer() {}
 	Tokenizer(std::vector<std::string>, FileStructure);
 	Line* getLineData(int);
+	int getSize();
 };
