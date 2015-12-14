@@ -15,6 +15,7 @@ MipsCompiler::MipsCompiler(std::string filename, std::string outputFile)
 	analyzeStructure();
 	tokenize();
 	handleLines();
+	printOutput();
 }
 
 void MipsCompiler::initializeFile(std::string filename)
