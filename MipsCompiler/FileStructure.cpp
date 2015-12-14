@@ -83,7 +83,7 @@ void FileStructure::fillBlockTree(unsigned int* idx, size_t* lidx, Block* block,
 Block* FileStructure::findBlockContainingLine(int lnum)
 {
 	Block* current = root;
-	for (int i = 0; i < current->children.size(); i++)
+	for (unsigned int i = 0; i < current->children.size(); i++)
 	{
 		if (lnum >= current->children[i]->top && lnum < current->children[i]->bottom)
 		{
@@ -95,7 +95,7 @@ Block* FileStructure::findBlockContainingLine(int lnum)
 
 Block* FileStructure::findBlockContainingLine(int lnum, Block* current)
 {
-	for (int i = 0; i < current->children.size(); i++)
+	for (unsigned int i = 0; i < current->children.size(); i++)
 	{
 		if (lnum >= current->children[i]->top && lnum < current->children[i]->bottom)
 		{
@@ -107,7 +107,7 @@ Block* FileStructure::findBlockContainingLine(int lnum, Block* current)
 
 void FileStructure::printStructure(Block* block, std::vector<std::string> vec)
 {
-	for (int i = 0; i < block->children.size(); i++)
+	for (unsigned int i = 0; i < block->children.size(); i++)
 	{
 		printStructure(block->children[i], vec);
 	}

@@ -4,7 +4,7 @@ Tokenizer::Tokenizer(std::vector<std::string> fileVec, FileStructure fstruc)
 {
 	size = fileVec.size();
 	buildKeywords();
-	for (int i = 0; i < fileVec.size(); i++)
+	for (unsigned int i = 0; i < fileVec.size(); i++)
 	{
 		lines.push_back(tokenizeLine(i, fileVec[i], fstruc));
 	}
@@ -210,7 +210,7 @@ std::vector<std::string> Tokenizer::getLits(std::string line)
 	for (auto x : words)
 	{
 		isnum = true;
-		for (int i = 0; i < x.size(); i++)
+		for (unsigned int i = 0; i < x.size(); i++)
 		{
 			if (!isdigit(x[i]))
 			{
@@ -289,6 +289,7 @@ std::vector<LineType> Tokenizer::findType(Line* line)
 			}
 		}
 	}
+	std::sort(types.begin(), types.end());
 	return types;
 }
 

@@ -5,12 +5,28 @@ LineHandler::LineHandler(Tokenizer tokens)
 	for (int i = 0; i < tokens.getSize(); i++)
 	{
 		Line* current = tokens.getLineData(i);
-		sendToFactory(current);
+		for (auto x : current->ltype)
+		{
+			sendToFactory(current, x);
+		}
 	}
 }
 
-void LineHandler::sendToFactory(Line* line)
+void LineHandler::sendToFactory(Line* line, LineType type)
 {
+	if (type == decl)
+	{
+		declFact = DeclarationFactory(line);
+	}
+	else if (type == arith)
+	{
+		arithFact = ArithmeticFactory(line);
+	}
+	else if (type == assign)
+	{
+		assignFact = AssignmentFactory(line);
+	}
+	/*
 	for (auto x : line->ltype)
 	{
 		if (x == decl)
@@ -21,7 +37,6 @@ void LineHandler::sendToFactory(Line* line)
 		{
 			arithFact = ArithmeticFactory(line);
 		}
-		/*
 		else if (x == assign)
 		{
 
@@ -34,6 +49,6 @@ void LineHandler::sendToFactory(Line* line)
 		{
 
 		}
-		*/
 	}
+	*/
 }

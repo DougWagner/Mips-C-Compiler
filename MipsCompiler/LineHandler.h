@@ -10,14 +10,16 @@
 
 #include "ArithmeticFactory.h"
 #include "DeclarationFactory.h"
+#include "AssignmentFactory.h"
 
 class LineHandler
 {
 private:
-	ArithmeticFactory arithFact;
 	DeclarationFactory declFact;
+	ArithmeticFactory arithFact;
+	AssignmentFactory assignFact;
 protected:
-	void sendToFactory(Line*);
+	void sendToFactory(Line*, LineType);
 public:
 	LineHandler() {}
 	LineHandler(Tokenizer);
