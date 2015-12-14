@@ -8,7 +8,7 @@
 #include <map>
 #include <unordered_set>
 #include "Arithmetic.h"
-/*
+
 class ArithmeticFactory{
 protected: 
 	Arithmetic* arith;
@@ -17,4 +17,3 @@ public:
 	ArithmeticFactory(Line*);
 	Arithmetic* getArith() { return arith; }
 };
-*/

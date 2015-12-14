@@ -1,5 +1,5 @@
 #include "ArithmeticFactory.h"
-/*
+
 ArithmeticFactory::ArithmeticFactory(Line* line)
 {
 	std::map<std::string, size_t>::iterator assignIter = line->lvars.begin();
@@ -35,4 +35,3 @@ ArithmeticFactory::ArithmeticFactory(Line* line)
 	if (oper == "+")
 		arith = new Addition(firstVar, secVar, assign);
 }
-*/
