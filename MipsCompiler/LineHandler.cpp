@@ -12,7 +12,7 @@ LineHandler::LineHandler(Tokenizer tokens)
 		}
 		//out.print();
 	}
-	out.print();
+	//out.print();
 }
 
 void LineHandler::sendToFactory(Line* line, LineType type)
@@ -29,10 +29,11 @@ void LineHandler::sendToFactory(Line* line, LineType type)
 		auto x = arithFact.getArith();
 		out.insertCode(x->arithmeticOp());
 	}
-	/*
 	else if (type == assign)
 	{
 		assignFact = AssignmentFactory(line);
+		auto x = assignFact.getIntAssign();
+		out.insertCode(x->convertToMips());
 	}
 	/*
 	for (auto x : line->ltype)
@@ -59,4 +60,9 @@ void LineHandler::sendToFactory(Line* line, LineType type)
 		}
 	}
 	*/
+}
+
+Output LineHandler::getOutput()
+{
+	return out;
 }

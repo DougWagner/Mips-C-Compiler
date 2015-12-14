@@ -22,12 +22,15 @@ private:
 	FileStructure structure;
 	Tokenizer tokens;
 	LineHandler handler;
+	Output out;
+	std::string outfile;
 protected:
 	void initializeFile(std::string);
 	void analyzeStructure();
 	void tokenize();
 	void handleLines();
 public:
-	MipsCompiler(std::string);
+	MipsCompiler(std::string, std::string);
 	void printFile();
+	void printOutput();
 };

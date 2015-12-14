@@ -17,11 +17,12 @@ class LineHandler
 private:
 	DeclarationFactory declFact;
 	ArithmeticFactory arithFact;
-	//AssignmentFactory assignFact;
+	AssignmentFactory assignFact;
 	Output out;
 protected:
 	void sendToFactory(Line*, LineType);
 public:
 	LineHandler() {}
 	LineHandler(Tokenizer);
+	Output getOutput();
 };

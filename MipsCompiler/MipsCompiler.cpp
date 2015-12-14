@@ -8,8 +8,9 @@ MipsCompiler::MipsCompiler(std::ifstream& file)
 }
 */
 
-MipsCompiler::MipsCompiler(std::string filename)
+MipsCompiler::MipsCompiler(std::string filename, std::string outputFile)
 {
+	outfile = outputFile;
 	initializeFile(filename);
 	analyzeStructure();
 	tokenize();
@@ -54,4 +55,10 @@ void MipsCompiler::printFile()
 void MipsCompiler::handleLines()
 {
 	handler = LineHandler(tokens);
+	out = handler.getOutput();
+}
+
+void MipsCompiler::printOutput()
+{
+	out.printToFile(outfile);
 }

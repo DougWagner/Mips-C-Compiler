@@ -38,3 +38,13 @@ void Output::print()
 		std::cout << x;
 	}
 }
+
+void Output::printToFile(std::string outputFile)
+{
+	std::ofstream outfile(outputFile);
+	for (auto x : output)
+	{
+		outfile << x;
+	}
+	outfile.close();
+}

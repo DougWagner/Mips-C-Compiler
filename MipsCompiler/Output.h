@@ -20,6 +20,6 @@ public:
 	Output();
 	void insertData(std::string);
 	void insertCode(std::string);
-	//void printToFile(std::string);
+	void printToFile(std::string);
 	void print();
 };
