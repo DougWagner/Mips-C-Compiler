@@ -17,6 +17,7 @@ void LineHandler::sendToFactory(Line* line)
 		{
 			declFact = DeclarationFactory(line);
 		}
+		/*
 		else if (x == arith)
 		{
 			arithFact = ArithmeticFactory(line);

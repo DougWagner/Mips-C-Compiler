@@ -18,5 +18,5 @@ protected:
 public:
 	DeclarationFactory() {}
 	DeclarationFactory(Line*);
-	IntDeclaration getIntDec() { return* intDec; }
+	IntDeclaration* getIntDec() { return intDec; }
 };
