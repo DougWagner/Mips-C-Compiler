@@ -14,9 +14,9 @@
 class DeclarationFactory 
 {
 protected:
-	IntDeclaration intDec;
+	IntDeclaration* intDec;
 public:
 	DeclarationFactory() {}
 	DeclarationFactory(Line*);
-	IntDeclaration getIntDec() { return intDec; }
+	IntDeclaration getIntDec() { return* intDec; }
 };

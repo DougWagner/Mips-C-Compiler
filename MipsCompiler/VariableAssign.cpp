@@ -7,5 +7,5 @@ IntAssign::IntAssign(std::string vName, std::string vValue)
 }
 std::string IntDeclaration::convertToMips()
 {
-
+	return "";
 }

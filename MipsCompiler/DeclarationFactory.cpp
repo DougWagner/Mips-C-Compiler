@@ -10,6 +10,6 @@ DeclarationFactory::DeclarationFactory(Line* line)
 			nameIter = iter;
 	}
 	std::string myString = nameIter->first;
-	intDec = IntDeclaration(myString);
+	intDec = new IntDeclaration(myString);
 }
 
