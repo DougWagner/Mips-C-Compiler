@@ -4,6 +4,7 @@ IntDeclaration::IntDeclaration(std::string vName, std::string vValue)
 {
 	varName = vName;
 	varValue = vValue;
+	//we also need to need place the .data header here.
 
 }
 IntDeclaration::IntDeclaration(std::string vName)
