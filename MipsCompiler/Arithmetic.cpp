@@ -48,7 +48,8 @@ std::string Multiplication::arithmeticOp()
 	// This Assumes that the two variables being added are declared!
 	std::stringstream ss;
 	ss << "\t\tlw $t0, " << name1 << "($zero)\n\t\tlw $t1, " <<
-		name2 << "($zero)\n\t\tmult $t2, $t0, $t1" << std::endl
+		name2 << "($zero)\n\t\tmult $t0, $t1" << std::endl
+		<< "\t\tmflo $t2\n"
 		<< "\t\tsw $t2, " << name3 << std::endl;
 	return ss.str();
 }
@@ -63,7 +64,8 @@ std::string Division::arithmeticOp()
 	// This Assumes that the two variables being added are declared!
 	std::stringstream ss;
 	ss << "\t\tlw $t0, " << name1 << "($zero)\n\t\tlw $t1, " <<
-		name2 << "($zero)\n\t\tdiv $t2, $t0, $t1" << std::endl
+		name2 << "($zero)\n\t\tdiv $t0, $t1" << std::endl
+		<<	"\t\tmflo $t2\n"
 		<< "\t\tsw $t2, " << name3 << std::endl;
 	return ss.str();
 }
