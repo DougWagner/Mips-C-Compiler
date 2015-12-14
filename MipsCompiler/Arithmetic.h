@@ -8,6 +8,7 @@
 #include <map>
 #include <unordered_set>
 #include "Tokenizer.h"
+#include <sstream>
 
 class Arithmetic
 {
