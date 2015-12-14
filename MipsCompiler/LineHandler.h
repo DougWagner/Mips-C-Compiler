@@ -14,10 +14,10 @@
 class LineHandler
 {
 private:
-	ArithmeticFactory arith;
-	DeclarationFactory decl;
+	ArithmeticFactory arithFact;
+	DeclarationFactory declFact;
 protected:
-
+	void sendToFactory(Line*);
 public:
 	LineHandler() {}
 	LineHandler(Tokenizer);
