@@ -13,19 +13,19 @@ ArithmeticFactory::ArithmeticFactory(Line* line)
 		if (iter->second < assignIter->second)
 			assignIter = iter;
 	}
-	assign = assignIter->first;
+	assign = assignIter->first + "var";
 	for (auto iter = line->lvars.begin(); iter != line->lvars.end(); ++iter)
 	{
 		if (iter->second > assignIter->second)
 			assignIter = iter;
 	}
-	secVar = assignIter->first;
+	secVar = assignIter->first + "var";
 	for (auto iter = line->lvars.begin(); iter != line->lvars.end(); ++iter)
 	{
 		if (iter->first != assign && iter->first != secVar)
 			assignIter = iter;
 	}
-	firstVar = assignIter->first;
+	firstVar = assignIter->first + "var";
 	for (auto iter = line->lops.begin(); iter != line->lops.end(); ++iter)
 	{
 		if (iter->first != "=")

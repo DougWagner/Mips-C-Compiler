@@ -9,6 +9,6 @@ std::string IntAssign::convertToMips()
 {
 	std::string tabs = "\t\t\t";
 	std::stringstream ss;
-	ss << "\t\tli, $t1, " << varValue << std::endl << "\t\tsw $t1, " << varName << std::endl;
+	ss << "\t\tli, $t1, " << varValue << std::endl << "\t\tsw $t1, " << varName << "var" << std::endl;
 	return ss.str();
 }
