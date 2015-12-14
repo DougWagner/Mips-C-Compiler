@@ -22,7 +22,7 @@ ArithmeticFactory::ArithmeticFactory(Line* line)
 	secVar = assignIter->first + "var";
 	for (auto iter = line->lvars.begin(); iter != line->lvars.end(); ++iter)
 	{
-		if (iter->first != assign && iter->first != secVar)
+		if (iter->first + "var" != assign && iter->first + "var" != secVar)
 			assignIter = iter;
 	}
 	firstVar = assignIter->first + "var";
