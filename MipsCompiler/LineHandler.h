@@ -16,7 +16,7 @@ class LineHandler
 {
 private:
 	DeclarationFactory declFact;
-	//ArithmeticFactory arithFact;
+	ArithmeticFactory arithFact;
 	//AssignmentFactory assignFact;
 	Output out;
 protected:

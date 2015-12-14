@@ -10,8 +10,9 @@ LineHandler::LineHandler(Tokenizer tokens)
 		{
 			sendToFactory(current, x);
 		}
-		out.print();
+		//out.print();
 	}
+	out.print();
 }
 
 void LineHandler::sendToFactory(Line* line, LineType type)
@@ -22,11 +23,13 @@ void LineHandler::sendToFactory(Line* line, LineType type)
 		auto x = declFact.getIntDec();
 		out.insertData(x->convertToMips());
 	}
-	/*
 	else if (type == arith)
 	{
 		arithFact = ArithmeticFactory(line);
+		auto x = arithFact.getArith();
+		out.insertCode(x->arithmeticOp());
 	}
+	/*
 	else if (type == assign)
 	{
 		assignFact = AssignmentFactory(line);
