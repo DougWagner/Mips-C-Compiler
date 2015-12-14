@@ -34,4 +34,10 @@ ArithmeticFactory::ArithmeticFactory(Line* line)
 	oper = opsIter->first;
 	if (oper == "+")
 		arith = new Addition(firstVar, secVar, assign);
+	else if (oper == "-")
+		arith = new Subtraction(firstVar, secVar, assign);
+	else if (oper == "*")
+		arith = new Multiplication(firstVar, secVar, assign);
+	else if (oper == "/")
+		arith = new Division(firstVar, secVar, assign);
 }

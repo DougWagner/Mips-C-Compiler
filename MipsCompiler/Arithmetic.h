@@ -19,6 +19,7 @@ public:
 	Arithmetic() {}
 	Arithmetic(std::string, std::string, std::string);
 	virtual std::string arithmeticOp() = 0;
+	//virtual std::string arithmeticOpWithLit() = 0;
 };
 
 class Addition : public virtual  Arithmetic
@@ -27,25 +28,32 @@ public:
 	Addition() {}
 	Addition(std::string, std::string, std::string);
 	std::string arithmeticOp();
+	//std::string arithmeticOpWithLit()
 };
 							   
-class Subtraction : private Arithmetic
+class Subtraction : public virtual Arithmetic
 {
 public:
+	Subtraction() {}
 	Subtraction(std::string, std::string, std::string);
 	std::string arithmeticOp();
+	//std::string arithmeticOpWithLit()
 };
 
-class Multiplication : private Arithmetic
+class Multiplication : public virtual Arithmetic
 {
 public:
+	Multiplication() {}
 	Multiplication(std::string, std::string, std::string);
 	std::string arithmeticOp();
+	//std::string arithmeticOpWithLit()
 };
 
-class Division : private Arithmetic
+class Division : public virtual Arithmetic
 {
 public:
+	Division() {}
 	Division(std::string, std::string, std::string);
 	std::string arithmeticOp();
+	//std::string arithmeticOpWithLit()
 };
