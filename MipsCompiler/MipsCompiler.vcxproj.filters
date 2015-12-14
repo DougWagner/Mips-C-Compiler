@@ -51,6 +51,9 @@
     <ClCompile Include="Output.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="VariableAssign.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MipsCompiler.h">
@@ -81,6 +84,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Output.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VariableAssign.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

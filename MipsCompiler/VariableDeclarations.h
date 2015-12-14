@@ -5,7 +5,7 @@ class VariableDeclartation
 {
 
 public:
-	VariableDeclartation();
+	VariableDeclartation() {}
 	virtual std::string getVarName() = 0;
 	virtual std::string convertToMips() = 0;
 };
@@ -20,14 +20,15 @@ public:
 		It takes two parameters.
 		IntDeclaration(string Name, string value)
 	*/
+	IntDeclaration() {}
 	IntDeclaration(std::string vName);
-	std::string getVarName() { return varName; }
+	std::string getVarName() override { return varName; }
 	/*
 		This converts C code to mips code 
 		and adds it to the .data portion of
 		the mips code.
 	*/
-	std::string convertToMips();
+	std::string convertToMips() override;
 	/*
 		This is for when a variable is later
 		initialized. takes in two strings.

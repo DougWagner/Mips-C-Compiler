@@ -129,6 +129,7 @@
     <ClCompile Include="Output.cpp" />
     <ClCompile Include="testfile.cpp" />
     <ClCompile Include="Tokenizer.cpp" />
+    <ClCompile Include="VariableAssign.cpp" />
     <ClCompile Include="VariableDeclarations.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -141,6 +142,7 @@
     <ClInclude Include="MipsCompiler.h" />
     <ClInclude Include="Output.h" />
     <ClInclude Include="Tokenizer.h" />
+    <ClInclude Include="VariableAssign.h" />
     <ClInclude Include="VariableDeclarations.h" />
   </ItemGroup>
   <ItemGroup>
