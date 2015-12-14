@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -8,9 +9,9 @@
 #include <unordered_set>
 #include "VariableDeclarations.h"
 
-#pragma once
+
 
 class DeclarationFactory {
 public:
-	DeclarationFactory(Tokenizer*, FileStructure*);
+	DeclarationFactory(Line*);
 };

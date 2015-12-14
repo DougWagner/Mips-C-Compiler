@@ -11,7 +11,5 @@
 class ArithmeticFactory{
 protected:
 public:
-	ArithmeticFactory();
-	void sendToFile();
-	std::string getMipsCode();
+	ArithmeticFactory(Line*);
 };

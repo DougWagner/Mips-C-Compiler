@@ -1,7 +1,16 @@
 #include "DeclarationFactory.h"
 
-DeclarationFactory::DeclarationFactory(Tokenizer* tokens, FileStructure* files)
+DeclarationFactory::DeclarationFactory(Line* line)
 {
-	for ()
+	std::map<std::string, size_t>::iterator nameIter = line->lvars.begin();
+
+	for (auto iter = line->lvars.begin();  iter != line->lvars.end(); ++iter)
+	{
+		if (iter->second < nameIter->second)
+			nameIter = iter;
+	}
+	
+
+	
 }
 
