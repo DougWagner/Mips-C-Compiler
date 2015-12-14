@@ -9,7 +9,9 @@
 #include <unordered_set>
 #include "Arithmetic.h"
 class ArithmeticFactory{
-protected:
+protected: 
+
 public:
+	ArithmeticFactory() {}
 	ArithmeticFactory(Line*);
 };

@@ -9,8 +9,7 @@ DeclarationFactory::DeclarationFactory(Line* line)
 		if (iter->second < nameIter->second)
 			nameIter = iter;
 	}
-	
-
-	
+	std::string myString = nameIter->first;
+	intDec = new IntDeclaration(myString);
 }
 

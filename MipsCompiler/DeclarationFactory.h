@@ -12,6 +12,10 @@
 
 
 class DeclarationFactory {
+protected:
+	IntDeclaration*	intDec;
 public:
+	DeclarationFactory() {}
 	DeclarationFactory(Line*);
+	IntDeclaration* getIntDec() { return intDec; }
 };
