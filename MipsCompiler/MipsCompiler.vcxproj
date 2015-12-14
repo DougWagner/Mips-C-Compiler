@@ -120,14 +120,12 @@
   <ItemGroup>
     <ClCompile Include="Arithmetic.cpp" />
     <ClCompile Include="ArithmeticFactory.cpp" />
-    <ClCompile Include="CrossReference.cpp" />
     <ClCompile Include="DeclarationFactory.cpp" />
     <ClCompile Include="FileStructure.cpp" />
     <ClCompile Include="LineHandler.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MipsCompiler.cpp" />
     <ClCompile Include="Output.cpp" />
-    <ClCompile Include="testfile.cpp" />
     <ClCompile Include="Tokenizer.cpp" />
     <ClCompile Include="VariableAssign.cpp" />
     <ClCompile Include="VariableDeclarations.cpp" />
@@ -135,7 +133,6 @@
   <ItemGroup>
     <ClInclude Include="Arithmetic.h" />
     <ClInclude Include="ArithmeticFactory.h" />
-    <ClInclude Include="CrossReference.h" />
     <ClInclude Include="DeclarationFactory.h" />
     <ClInclude Include="FileStructure.h" />
     <ClInclude Include="LineHandler.h" />
