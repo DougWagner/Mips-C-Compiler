@@ -11,8 +11,7 @@
 #include "FileStructure.h"
 #include "Tokenizer.h"
 #include "ArithmeticFactory.h"
-//#include "Lineparser.h"
-//#include "Lexer.h"
+#include "LineHandler.h"
 //#include "ArithmeticFactory.h"
 //#include "Arithmetic.h"
 
@@ -22,6 +21,7 @@ private:
 	std::vector<std::string> file;
 	FileStructure structure;
 	Tokenizer tokens;
+	LineHandler handler;
 protected:
 	void initializeFile(std::string);
 	void analyzeStructure();
