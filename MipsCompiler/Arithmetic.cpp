@@ -21,7 +21,7 @@ std::string Addition::arithmeticOp()
 	//std::string s2 = ("lw $t0, %s($zero)\n", name2);
 	//std::string s3 = "add $t2, $t0, $t1\n";
 	//std::string s4 = ("sw $t2, %s\n", name3);
-	ss << "\t\tlw $t0, " << name1 << "($zero)\n\t\tlw $t0, " <<
+	ss << "\t\tlw $t0, " << name1 << "($zero)\n\t\tlw $t1, " <<
 		name2 << "($zero)\n\t\tadd $t2, $t0, $t1" << std::endl
 		<<"\t\tsw $t2, " << name3 << std::endl;
 	//std::string converted = s1 + s2 + s3 + s4;
