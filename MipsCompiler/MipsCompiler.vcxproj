@@ -143,6 +143,9 @@
     <ClInclude Include="Tokenizer.h" />
     <ClInclude Include="VariableDeclarations.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="test1.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
