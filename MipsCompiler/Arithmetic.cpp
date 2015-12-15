@@ -110,7 +110,7 @@ std::string Multiplication::arithmeticOp()
 	std::stringstream ss;
 	if (arithType == 0)
 	{
-		ss << "\t\tlw $t0, " << name1 << std::endl <<
+		ss << "\t\tlw $t0, " << name1  <<
 			"($zero)\n\t\tlw $t1, " << name2 <<
 			"($zero)\n\t\tmult $t0, $t1" << std::endl <<
 			"\t\tmflo $t2\n" <<
@@ -153,7 +153,7 @@ std::string Division::arithmeticOp()
 	*/
 	if (arithType == 0)
 	{
-		ss << "\t\tlw $t0, " << name1 << std::endl <<
+		ss << "\t\tlw $t0, " << name1 <<
 			"($zero)\n\t\tlw $t1, " << name2 <<
 			"($zero)\n\t\tdiv $t0, $t1" << std::endl <<
 			"\t\tmflo $t2\n" <<
