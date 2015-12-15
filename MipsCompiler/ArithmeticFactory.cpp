@@ -8,28 +8,76 @@ ArithmeticFactory::ArithmeticFactory(Line* line)
 	std::string firstVar;
 	std::string secVar;
 	std::string oper;
-	for (auto iter = line->lvars.begin(); iter != line->lvars.end(); ++iter)
+	if (line->llits.size() == 0)
 	{
-		if (iter->second < assignIter->second)
-			assignIter = iter;
+		for (auto iter = line->lvars.begin(); iter != line->lvars.end(); ++iter)
+		{
+			if (iter->second < assignIter->second)
+				assignIter = iter;
+		}
+		assign = assignIter->first + "var";
+		for (auto iter = line->lvars.begin(); iter != line->lvars.end(); ++iter)
+		{
+			if (iter->second > assignIter->second)
+				assignIter = iter;
+		}
+		secVar = assignIter->first + "var";
+		for (auto iter = line->lvars.begin(); iter != line->lvars.end(); ++iter)
+		{
+			if (iter->first + "var" != assign && iter->first + "var" != secVar)
+				assignIter = iter;
+		}
+		firstVar = assignIter->first + "var";
+		for (auto iter = line->lops.begin(); iter != line->lops.end(); ++iter)
+		{
+			if (iter->first != "=")
+				opsIter = iter;
+		}
 	}
-	assign = assignIter->first + "var";
-	for (auto iter = line->lvars.begin(); iter != line->lvars.end(); ++iter)
+	else if (line->llits.size() == 1)
 	{
-		if (iter->second > assignIter->second)
-			assignIter = iter;
+		for (auto iter = line->lvars.begin(); iter != line->lvars.end(); ++iter)
+		{
+			if (iter->second < assignIter->second)
+				assignIter = iter;
+		}
+		assign = assignIter->first + "var";
+		for (auto iter = line->lvars.begin(); iter != line->lvars.end(); ++iter)
+		{
+			if (iter->first + "var" != assignIter->first + "var")
+				assignIter = iter;
+		}
+		firstVar = assignIter->first;
+		secVar = line->llits.begin()->first;
+		for (auto iter = line->lops.begin(); iter != line->lops.end(); ++iter)
+		{
+			if (iter->first != "=")
+				opsIter = iter;
+		}
 	}
-	secVar = assignIter->first + "var";
-	for (auto iter = line->lvars.begin(); iter != line->lvars.end(); ++iter)
+	else if (line->llits.size() == 2)
 	{
-		if (iter->first + "var" != assign && iter->first + "var" != secVar)
-			assignIter = iter;
-	}
-	firstVar = assignIter->first + "var";
-	for (auto iter = line->lops.begin(); iter != line->lops.end(); ++iter)
-	{
-		if (iter->first != "=")
-			opsIter = iter;
+		for (auto iter = line->lvars.begin(); iter != line->lvars.end(); ++iter)
+		{
+			if (iter->second < assignIter->second)
+				assignIter = iter;
+		}
+		assign = assignIter->first + "var";
+		assignIter = line->llits.begin();
+		for (auto iter = line->llits.begin(); iter != line->llits.end(); ++iter)
+		{
+			if (iter->second < assignIter->second)
+				assignIter = iter;
+		}
+		firstVar = assignIter->first;
+		for (auto iter = line->llits.begin(); iter != line->llits.end(); ++iter)
+		{
+			if (iter->first != assignIter->first)
+				assignIter = iter;
+		}
+		secVar = assignIter->first;
+
+
 	}
 	oper = opsIter->first;
 	if (oper == "+")
