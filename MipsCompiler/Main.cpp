@@ -1,4 +1,5 @@
 #include "MipsCompiler.h" 
+// this is a branch test
 int main()
 {
  	std::string infile = "test1.txt";
