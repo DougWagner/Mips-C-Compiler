@@ -6,7 +6,7 @@ Arithmetic::Arithmetic(std::string n1,
 	name1 = n1;
 	name2 = n2;
 	name3 = n3;
-	for (int i = 0; i < name1.length(); i++)
+	for (unsigned int i = 0; i < name1.length(); i++)
 	{
 		if (!isdigit(name1[i]))
 		{
@@ -15,7 +15,7 @@ Arithmetic::Arithmetic(std::string n1,
 		}
 		checkName1 = 1;
 	}
-	for (int i = 0; i < name2.length(); i++)
+	for (unsigned int i = 0; i < name2.length(); i++)
 	{
 		if (!isdigit(name2[i]))
 		{
