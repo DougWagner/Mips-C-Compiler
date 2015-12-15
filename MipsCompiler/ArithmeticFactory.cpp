@@ -47,7 +47,7 @@ ArithmeticFactory::ArithmeticFactory(Line* line)
 			if (iter->first + "var" != assignIter->first + "var")
 				assignIter = iter;
 		}
-		firstVar = assignIter->first;
+		firstVar = assignIter->first + "var";
 		secVar = line->llits.begin()->first;
 		for (auto iter = line->lops.begin(); iter != line->lops.end(); ++iter)
 		{
@@ -73,10 +73,17 @@ ArithmeticFactory::ArithmeticFactory(Line* line)
 		for (auto iter = line->llits.begin(); iter != line->llits.end(); ++iter)
 		{
 			if (iter->first != assignIter->first)
+			{
 				assignIter = iter;
+				break;
+			}
 		}
 		secVar = assignIter->first;
-
+		for (auto iter = line->lops.begin(); iter != line->lops.end(); ++iter)
+		{
+			if (iter->first != "=")
+				opsIter = iter;
+		}
 
 	}
 	oper = opsIter->first;

@@ -86,7 +86,8 @@ std::string Subtraction::arithmeticOp()
 	if (arithType == 1)
 	{
 		ss << "\t\tlw $t0, " << name1 << "($zero)" <<
-			"\n\t\tsubi $t2, $t0, " << name2 << std::endl <<
+			"\n\t\tli $t1, "<< name2 << std::endl <<
+			"\t\tsub $t2, $t0, $t1" << std::endl <<
 			"\t\tsw $t2, " << name3 << std::endl;
 	}
 	if (arithType == 2)
@@ -119,7 +120,7 @@ std::string Multiplication::arithmeticOp()
 	else if (arithType == 1)
 	{
 		ss << "\t\tlw $t0, " << name1 << "($zero)" << std::endl <<
-			"\t\tli $ti, " << name2 << std::endl <<
+			"\t\tli $t1, " << name2 << std::endl <<
 			"\t\tmult $t0, $t1\n" <<
 			"\t\tmflo $t2\n" <<
 			"\t\tsw $t2, " << name3 << std::endl;
@@ -127,7 +128,7 @@ std::string Multiplication::arithmeticOp()
 	else if (arithType == 2)
 	{
 		ss << "\t\tli $t0, " << name1 << std::endl <<
-			"\t\tli $ti, " << name2 << std::endl <<
+			"\t\tli $t1, " << name2 << std::endl <<
 			"\t\tmult $t0, $t1\n" <<
 			"\t\tmflo $t2\n" <<
 			"\t\tsw $t2, " << name3 << std::endl;
@@ -162,7 +163,7 @@ std::string Division::arithmeticOp()
 	else if (arithType == 1)
 	{
 		ss << "\t\tlw $t0, " << name1 << "($zero)" << std::endl <<
-			"\t\tli $ti, " << name2 << std::endl <<
+			"\t\tli $t1, " << name2 << std::endl <<
 			"\t\tdiv $t0, $t1\n" <<
 			"\t\tmflo $t2\n" <<
 			"\t\tsw $t2, " << name3 << std::endl;
@@ -170,7 +171,7 @@ std::string Division::arithmeticOp()
 	else if (arithType == 2)
 	{
 		ss << "\t\tli $t0, " << name1 << std::endl <<
-			"\t\tli $ti, " << name2 << std::endl <<
+			"\t\tli $t1, " << name2 << std::endl <<
 			"\t\tdiv $t0, $t1\n" <<
 			"\t\tmflo $t2\n" <<
 			"\t\tsw $t2, " << name3 << std::endl;
