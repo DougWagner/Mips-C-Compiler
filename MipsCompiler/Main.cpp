@@ -14,9 +14,9 @@ int main()
 	run = MipsCompiler(file2, out2);
 	run.printFile();
 	run = MipsCompiler(file3, out3);
-	run.printFile();
-	run = MipsCompiler(file4, out4);
-	run.printFile();
+	//run.printFile();
+	//run = MipsCompiler(file4, out4);
+	//run.printFile();
  	system("pause");
  	return 0;
 }
