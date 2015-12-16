@@ -48,7 +48,7 @@ void MipsCompiler::printFile()
 
 void MipsCompiler::handleLines()
 {
-	handler = LineHandler(tokens);
+	handler = LineHandler(tokens, structure);
 	out = handler.getOutput();
 }
 

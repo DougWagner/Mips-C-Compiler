@@ -21,8 +21,9 @@ private:
 	Output out;
 protected:
 	void sendToFactory(Line*, LineType);
+	void handleBlock(Tokenizer, Block*, FileStructure);
 public:
 	LineHandler() {}
-	LineHandler(Tokenizer);
+	LineHandler(Tokenizer, FileStructure);
 	Output getOutput();
 };

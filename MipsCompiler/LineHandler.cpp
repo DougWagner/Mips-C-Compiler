@@ -1,8 +1,10 @@
 #include "LineHandler.h"
 
-LineHandler::LineHandler(Tokenizer tokens)
+LineHandler::LineHandler(Tokenizer tokens, FileStructure structure)
 {
 	out = Output();
+	handleBlock(tokens, structure.findBlockContainingLine(0), structure); // send to block handler with root block
+	/*
 	for (int i = 0; i < tokens.getSize(); i++)
 	{
 		Line* current = tokens.getLineData(i);
@@ -13,6 +15,28 @@ LineHandler::LineHandler(Tokenizer tokens)
 		//out.print();
 	}
 	//out.print();
+	*/
+
+}
+
+void LineHandler::handleBlock(Tokenizer tokens, Block* block, FileStructure structure)
+{
+	for (unsigned int i = 0; i < block->children.size(); i++)
+	{
+		handleBlock(tokens, block->children[i], structure);
+	}
+	for (int i = block->top; i <= block->bottom; i++)
+	{
+		if (structure.findBlockContainingLine(i) != block)
+		{
+			continue;
+		}
+		Line* current = tokens.getLineData(i);
+		for (auto x : current->ltype)
+		{
+			std::cout << current->lnum << " sent to factory" << std::endl;
+		}
+	}
 }
 
 void LineHandler::sendToFactory(Line* line, LineType type)
