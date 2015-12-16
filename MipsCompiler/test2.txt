@@ -1,0 +1,5 @@
+int x = 350;
+int a = x + 200;
+int b = x - 100;
+int c = x * 15;
+int d = x / 10;

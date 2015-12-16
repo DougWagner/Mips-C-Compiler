@@ -1,0 +1,15 @@
+int x;
+x = 750;
+int y = 250;
+int a = x + y;
+int b = x - y;
+int c = x * y;
+int d = x / y;
+int e = x + 300;
+int f = x - 25;
+int g = x * 5;
+int h = x / 50;
+int i = 90 + 70;
+int j = 400 - 220;
+int k = 15 * 4;
+int l = 7500 / 100;

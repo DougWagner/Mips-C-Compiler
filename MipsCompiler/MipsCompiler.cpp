@@ -7,7 +7,7 @@ MipsCompiler::MipsCompiler(std::string filename, std::string outputFile)
 	analyzeStructure();
 	tokenize();
 	handleLines();
-	printOutput();
+	//printOutput();
 }
 
 void MipsCompiler::initializeFile(std::string filename)
@@ -44,6 +44,8 @@ void MipsCompiler::printFile()
 	{
 		std::cout << file[i] << std::endl;
 	}
+	std::cout << std::endl;
+	printOutput();
 }
 
 void MipsCompiler::handleLines()
@@ -57,5 +59,5 @@ void MipsCompiler::printOutput()
 	std::cout << "GENERATED MIPS CODE:" << std::endl << std::endl;
 	out.print();
 	out.printToFile(outfile);
-	std::cout << std::endl << std::endl;
+	std::cout << std::endl;
 }
